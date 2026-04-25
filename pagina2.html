@@ -150,16 +150,35 @@
 
 <p class="subtitle">&iquest;Listo para dar el siguiente paso?<br/>Agenda tu clase gratuita ahora.</p>
 
-<!-- Reemplaza el href con tu enlace de Calendly en el Paso siguiente -->
-<a href="https://calendly.com/jalarcon653/30min" target="_blank" class="btn">AGENDAR MI CITA</a>
+<button class="btn" onclick="mostrarCalendly()">AGENDAR MI CITA</button>
 
 <p class="note">
   <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="11" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
   Sin compromiso &bull; Clase 100% gratuita
 </p>
+
+<!-- Calendly inline widget -->
+<div id="calendly-wrap" style="display:none;margin-top:24px;border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.12);">
+  <div class="calendly-inline-widget"
+    data-url="https://calendly.com/jalarcon653/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=e8362a"
+    style="min-width:280px;height:700px;">
+  </div>
+</div>
 ```
 
   </div>
+
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <script>
+    function mostrarCalendly() {
+      const wrap = document.getElementById('calendly-wrap');
+      wrap.style.display = 'block';
+      wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelector('.btn').style.display = 'none';
+      document.querySelector('.note').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
