@@ -144,6 +144,10 @@
         document.getElementById('formSection').style.display = 'none';
         const s = document.getElementById('successSection');
         s.style.display = 'flex';
+setTimeout(function(){
+  window.location.href = 'pagina2.html';
+}, 3000);
+
 
       } catch (err) {
         btn.disabled = false;
