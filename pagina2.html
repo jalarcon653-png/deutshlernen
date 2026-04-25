@@ -2,156 +2,164 @@
 
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deutschlernen &#8211; Clase Gratuita</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deutschlernen &ndash; Tu pr&oacute;ximo paso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --red: #e8362a; --dark: #1a1a1a; --mid: #555;
-      --light: #f5f5f3; --card: #ffffff; --border: #e0e0e0; --radius: 14px;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --red:#e8362a;--dark:#111;--mid:#555;--soft:#888;
+      --light:#f5f5f3;--card:#fff;--border:#e4e4e4;--radius:16px;
     }
-    body {
-      min-height: 100dvh; display: flex; align-items: center; justify-content: center;
-      background: var(--light); font-family: 'Outfit', sans-serif; padding: 24px 16px;
+    body{
+      min-height:100dvh;
+      font-family:'Outfit',sans-serif;
+      background:var(--light);
+      color:var(--dark);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:32px 16px 48px;
       background-image:
-        radial-gradient(ellipse 60% 40% at 80% 10%, rgba(232,54,42,.07) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 35% at 10% 90%, rgba(232,54,42,.05) 0%, transparent 70%);
+        radial-gradient(ellipse 60% 40% at 80% 10%, rgba(232,54,42,.06) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 35% at 10% 90%, rgba(232,54,42,.04) 0%, transparent 70%);
     }
-    .card {
-      background: var(--card); border-radius: 24px; padding: 44px 40px 40px;
-      width: 100%; max-width: 420px;
-      box-shadow: 0 2px 4px rgba(0,0,0,.04), 0 12px 40px rgba(0,0,0,.10), 0 0 0 1px rgba(0,0,0,.04);
-      animation: fadeUp .55s cubic-bezier(.22,1,.36,1) both;
-    }
-    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-    .logo { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
-    .logo-flag { width:32px; height:22px; border-radius:4px; overflow:hidden; display:flex; flex-direction:column; flex-shrink:0; box-shadow:0 1px 4px rgba(0,0,0,.18); }
-    .logo-flag span { flex:1; display:block; }
-    .logo-flag .f1{background:#1a1a1a} .logo-flag .f2{background:#dd0000} .logo-flag .f3{background:#ffce00}
-    .logo-text { font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:.04em; color:var(--dark); line-height:1; }
-    .tagline { font-size:10.5px; font-weight:400; letter-spacing:.12em; text-transform:uppercase; color:#999; margin-bottom:36px; }
-    .form-title { font-size:26px; font-weight:600; color:var(--dark); margin-bottom:6px; }
-    .form-sub { font-size:14px; color:var(--mid); font-weight:300; line-height:1.55; margin-bottom:28px; }
-    .field { margin-bottom:16px; }
-    label { display:block; font-size:13px; font-weight:500; color:var(--dark); margin-bottom:7px; }
-    .input-wrap { position:relative; }
-    .input-wrap svg { position:absolute; left:14px; top:50%; transform:translateY(-50%); width:16px; height:16px; stroke:#aaa; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; pointer-events:none; transition:stroke .2s; }
-    input { width:100%; padding:13px 14px 13px 40px; border:1.5px solid var(--border); border-radius:var(--radius); font-family:'Outfit',sans-serif; font-size:14.5px; color:var(--dark); background:#fafafa; outline:none; transition:border-color .2s, background .2s, box-shadow .2s; }
-    input::placeholder { color:#bbb; }
-    input:focus { border-color:var(--red); background:#fff; box-shadow:0 0 0 3px rgba(232,54,42,.08); }
-    input:focus ~ svg, .input-wrap:focus-within svg { stroke:var(--red); }
-    .btn { margin-top:8px; width:100%; padding:15px; background:var(--red); color:#fff; border:none; border-radius:var(--radius); font-family:'Bebas Neue',sans-serif; font-size:17px; letter-spacing:.12em; cursor:pointer; transition:background .2s, transform .12s, box-shadow .2s; box-shadow:0 4px 18px rgba(232,54,42,.35); }
-    .btn:hover { background:#c92b20; box-shadow:0 6px 22px rgba(232,54,42,.45); }
-    .btn:active { transform:scale(.98); }
-    .btn:disabled { background:#ccc; box-shadow:none; cursor:not-allowed; }
-    .note { display:flex; align-items:center; justify-content:center; gap:6px; margin-top:16px; font-size:12px; color:#aaa; font-weight:300; }
-    .note svg { width:13px; height:13px; stroke:#aaa; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
-    .privacy { text-align:center; margin-top:6px; font-size:11.5px; color:#bbb; font-weight:300; }
-    .privacy a { color:var(--red); text-decoration:none; }
-    .success { display:none; flex-direction:column; align-items:center; text-align:center; padding:20px 0 10px; animation:fadeUp .4s ease both; }
-    .success-icon { width:60px; height:60px; background:#fff0ef; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
-    .success-icon svg { width:28px; height:28px; stroke:var(--red); fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
-    .success h2 { font-size:22px; font-weight:600; color:var(--dark); margin-bottom:8px; }
-    .success p  { font-size:14px; color:var(--mid); font-weight:300; line-height:1.6; }
-    @media (max-width:460px) { .card { padding:36px 24px 32px; } }
+
+```
+/* ── Logo ── */
+.logo{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:28px;
+  animation:fadeUp .5s ease both;
+}
+.flag{width:30px;height:20px;border-radius:3px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.flag span{flex:1}
+.f1{background:#1a1a1a}.f2{background:#dd0000}.f3{background:#ffce00}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.05em;color:var(--dark)}
+
+/* ── Card ── */
+.card{
+  background:var(--card);
+  border-radius:24px;
+  padding:40px 36px 36px;
+  width:100%;max-width:480px;
+  box-shadow:0 2px 4px rgba(0,0,0,.04),0 12px 40px rgba(0,0,0,.10),0 0 0 1px rgba(0,0,0,.04);
+  animation:fadeUp .55s cubic-bezier(.22,1,.36,1) both;
+  animation-delay:.1s;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(22px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ── Title ── */
+.title{
+  font-size:clamp(20px,5vw,26px);
+  font-weight:700;
+  line-height:1.25;
+  color:var(--dark);
+  margin-bottom:6px;
+  text-align:center;
+}
+.title span{color:var(--red)}
+
+/* ── Video ── */
+.video-wrap{
+  position:relative;
+  margin:24px 0;
+  border-radius:14px;
+  overflow:hidden;
+  background:#000;
+  /* Shorts are 9:16 */
+  aspect-ratio:9/16;
+  max-height:480px;
+  box-shadow:0 8px 32px rgba(0,0,0,.18);
+}
+.video-wrap iframe{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  border:none;
+}
+
+/* ── Subtitle ── */
+.subtitle{
+  font-size:15px;
+  color:var(--mid);
+  font-weight:300;
+  line-height:1.6;
+  text-align:center;
+  margin-bottom:28px;
+}
+
+/* ── CTA ── */
+.btn{
+  display:block;
+  width:100%;
+  padding:16px;
+  background:var(--red);
+  color:#fff;
+  border:none;
+  border-radius:var(--radius);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:18px;
+  letter-spacing:.12em;
+  cursor:pointer;
+  text-align:center;
+  text-decoration:none;
+  transition:background .2s,transform .12s,box-shadow .2s;
+  box-shadow:0 4px 18px rgba(232,54,42,.35);
+}
+.btn:hover{background:#c92b20;box-shadow:0 6px 24px rgba(232,54,42,.45)}
+.btn:active{transform:scale(.98)}
+
+/* ── Note ── */
+.note{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  margin-top:14px;font-size:12px;color:#aaa;font-weight:300;
+}
+.note svg{width:13px;height:13px;stroke:#aaa;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+@media(max-width:460px){
+  .card{padding:28px 20px 28px}
+}
+```
+
   </style>
 </head>
 <body>
+
+  <div class="logo">
+    <div class="flag"><span class="f1"></span><span class="f2"></span><span class="f3"></span></div>
+    <span class="logo-text">Deutschlernen</span>
+  </div>
+
   <div class="card">
-    <div class="logo">
-      <div class="logo-flag"><span class="f1"></span><span class="f2"></span><span class="f3"></span></div>
-      <span class="logo-text">Deutschlernen</span>
-    </div>
-    <p class="tagline">Pioneros en la ense&ntilde;anza del alem&aacute;n desde 2004</p>
+    <h1 class="title">Descubre c&oacute;mo aprender<br/><span>alem&aacute;n desde cero</span></h1>
 
 ```
-<div id="formSection">
-  <h1 class="form-title">&iexcl;Reg&iacute;strate!</h1>
-  <p class="form-sub">D&eacute;janos tus datos y te contactamos de inmediato para una clase gratuita.</p>
-
-  <div class="field">
-    <label for="nombre">Nombre completo</label>
-    <div class="input-wrap">
-      <input type="text" id="nombre" placeholder="Ej. Mar&iacute;a Gonz&aacute;lez" autocomplete="name" />
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
-  </div>
-
-  <div class="field">
-    <label for="telefono">N&uacute;mero de contacto</label>
-    <div class="input-wrap">
-      <input type="tel" id="telefono" placeholder="+52 55 1234 5678" autocomplete="tel" />
-      <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2A11.4 11.4 0 0020 16.5c.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.5 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-    </div>
-  </div>
-
-  <div class="field">
-    <label for="email">Correo electr&oacute;nico</label>
-    <div class="input-wrap">
-      <input type="email" id="email" placeholder="tu@correo.com" autocomplete="email" />
-      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 6 10-6"/></svg>
-    </div>
-  </div>
-
-  <button class="btn" onclick="enviar()">AGENDAR MI LLAMADA</button>
-
-  <p class="note">
-    <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="11" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
-    Tus datos est&aacute;n seguros. Sin spam.
-  </p>
-  <p class="privacy">Al continuar aceptas nuestra <a href="#">Pol&iacute;tica de Privacidad</a>.</p>
+<div class="video-wrap">
+  <iframe
+    src="https://www.youtube.com/embed/6fuKa8uxdeI?rel=0&modestbranding=1&playsinline=1"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
 </div>
 
-<div class="success" id="successSection">
-  <div class="success-icon">
-    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-  </div>
-  <h2>&iexcl;Listo! Te contactamos pronto.</h2>
-  <p>Gracias por registrarte. Uno de nuestros asesores se pondr&aacute; en contacto contigo para coordinar tu clase gratuita.</p>
-</div>
+<p class="subtitle">&iquest;Listo para dar el siguiente paso?<br/>Agenda tu clase gratuita ahora.</p>
+
+<!-- Reemplaza el href con tu enlace de Calendly en el Paso siguiente -->
+<a href="https://calendly.com/jalarcon653/30min" target="_blank" class="btn">AGENDAR MI CITA</a>
+
+<p class="note">
+  <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="11" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+  Sin compromiso &bull; Clase 100% gratuita
+</p>
 ```
 
   </div>
-
-  <script>
-    // ⚠️ REEMPLAZA la URL de abajo con la URL de tu Webhook de Make
-    const MAKE_WEBHOOK_URL = 'https://hook.us2.make.com/fiqk2jep0beoma18nexu2ratfshcg9wt';
-
-    async function enviar() {
-      const nombre   = document.getElementById('nombre').value.trim();
-      const telefono = document.getElementById('telefono').value.trim();
-      const email    = document.getElementById('email').value.trim();
-
-      if (!nombre || !telefono || !email) {
-        alert('Por favor completa todos los campos.');
-        return;
-      }
-
-      const btn = document.querySelector('.btn');
-      btn.disabled = true;
-      btn.textContent = 'Enviando...';
-
-      try {
-        await fetch(MAKE_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ nombre, telefono, email })
-        });
-
-        document.getElementById('formSection').style.display = 'none';
-        const s = document.getElementById('successSection');
-        s.style.display = 'flex';
-
-      } catch (err) {
-        btn.disabled = false;
-        btn.textContent = 'AGENDAR MI LLAMADA';
-        alert('Hubo un error al enviar. Intenta de nuevo.');
-      }
-    }
-  </script>
 
 </body>
 </html>
